@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 public class TimeConversionService {
 
 	public String LocalSystemTimeConversion() {
-		//LocalTime currentTime = LocalTime.now();
-       Date currentTime = new Date();
-	   SimpleDateFormat formatter = new SimpleDateFormat("hh:mm");
-	   String time = formatter.format(currentTime);
+		// LocalTime currentTime = LocalTime.now();
+		Date currentTime = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
+		String time = formatter.format(currentTime);
 		return new String(UserInputTimeConversion(time));
 
 	}
