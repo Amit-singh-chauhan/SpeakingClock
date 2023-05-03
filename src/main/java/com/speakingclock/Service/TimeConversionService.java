@@ -1,7 +1,7 @@
 package com.speakingclock.Service;
 
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.springframework.stereotype.Service;
 
@@ -9,9 +9,10 @@ import org.springframework.stereotype.Service;
 public class TimeConversionService {
 
 	public String LocalSystemTimeConversion() {
-		LocalTime currentTime = LocalTime.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm");
-		String time = currentTime.format(formatter);
+		//LocalTime currentTime = LocalTime.now();
+       Date currentTime = new Date();
+	   SimpleDateFormat formatter = new SimpleDateFormat("hh:mm");
+	   String time = formatter.format(currentTime);
 		return new String(UserInputTimeConversion(time));
 
 	}
